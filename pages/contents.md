@@ -1,39 +1,55 @@
-- ## 🦜 绿颊锥尾鹦鹉知识库
-  collapsed:: false
-  - 本知识库围绕 绿颊锥尾鹦鹉（Green-cheeked Conure）的饲养全流程构建，覆盖饮食、营养、疾病、行为、身体构造与生理周期六大板块
-  - 所有内容基于单一品种约束，通过 Logseq 属性驱动和双向链接构建结构化知识网络
-  - 使用页面底部的查询块快速浏览各类条目，或通过左侧栏搜索关键词
-- ## 🍽️ 饮食库
-  - ### 安全可喂
-  - {{query (property type [[饮食]]) (property 安全等级 [[安全]]) }}
-  - ### 需注意
-  - {{query (property type [[饮食]]) (property 安全等级 [[需注意]]) }}
-  - ### 有毒
-  - {{query (property type [[饮食]]) (property 安全等级 [[有毒]]) }}
-  - ### 绝对禁止
-  - {{query (property type [[饮食]]) (property 安全等级 [[绝对禁止]]) }}
-  - ### 按食物类型
-  - 水果: {{query (property type [[饮食]]) (property 食物类型 [[水果]]) }}
-  - 蔬菜: {{query (property type [[饮食]]) (property 食物类型 [[蔬菜]]) }}
-  - 种子粮: {{query (property type [[饮食]]) (property 食物类型 [[种子粮]]) }}
-  - 蛋白质食物: {{query (property type [[饮食]]) (property 食物类型 [[蛋白质食物]]) }}
-  - 加工食品: {{query (property type [[饮食]]) (property 食物类型 [[加工食品]]) }}
+## 🍽️ 饮食库
+	- ### 安全可喂
+	- {{query (and (page-property :type [[饮食]]) (page-property :安全等级 [[安全]]))}}
+	  query-table:: true
+	  query-properties:: [:page :食物类型 :年龄阶段 :alias]
+	- ### 需注意
+	- {{query (and (page-property :type [[饮食]]) (page-property :安全等级 [[需注意]]))}}
+	  query-properties:: [:page :食物类型 :年龄阶段 :alias]
+	- ### 有毒
+	- {{query (and (page-property :type [[饮食]]) (page-property :安全等级 [[有毒]]))}}
+	  query-properties:: [:page :食物类型 :年龄阶段 :alias]
+	- ### 绝对禁止
+	- {{query (and (page-property :type [[饮食]]) (page-property :安全等级 [[绝对禁止]]))}}
+	  query-properties:: [:page :食物类型 :年龄阶段 :alias]
+	- ### 按食物类型
+	- 水果: {{query (and (page-property :type [[饮食]]) (page-property :食物类型 [[水果]]))}}
+	  query-properties:: [:page :安全等级 :年龄阶段 :alias]
+	  query-sort-by:: 安全等级
+	  query-sort-desc:: false
+	- 蔬菜: {{query (and (page-property :type [[饮食]]) (page-property :食物类型 [[蔬菜]]))}}
+	  query-properties:: [:page :安全等级 :年龄阶段 :alias]
+	  query-sort-by:: 安全等级
+	  query-sort-desc:: false
+	- 种子粮: {{query (and (page-property :type [[饮食]]) (page-property :食物类型 [[种子粮]]))}}
+	  query-properties:: [:page :安全等级 :年龄阶段]
+	- 蛋白质食物: {{query (and (page-property :type [[饮食]]) (page-property :食物类型 [[蛋白质食物]]))}}
+	  query-properties:: [:page :安全等级 :年龄阶段]
+	- 加工食品: {{query (and (page-property :type [[饮食]]) (page-property :食物类型 [[加工食品]]))}}
+	  query-properties:: [:page :安全等级 :年龄阶段 :alias]
 - ## 🔬 营养成分
-  - {{query (property type [[营养成分]]) }}
+	- {{query (and (page-property :type [[营养成分]]))}}
+	  query-properties:: [:page :营养素类型 :必需性]
+	  query-sort-by:: page
+	  query-sort-desc:: false
 - ## 🏥 疾病与中毒
-  - ### 按严重程度
-  - 急症: {{query (property type [[疾病]]) (property 严重程度 [[急症]]) }}
-  - 重症: {{query (property type [[疾病]]) (property 严重程度 [[重症]]) }}
-  - 中症: {{query (property type [[疾病]]) (property 严重程度 [[中症]]) }}
-  - ### 按病因类型
-  - 营养代谢性: {{query (property type [[疾病]]) (property 病因类型 [[营养代谢性]]) }}
-  - 中毒性: {{query (property type [[疾病]]) (property 病因类型 [[中毒性]]) }}
+	- ### 按严重程度
+	- 急症: {{query (and (page-property :type [[疾病]]) (page-property :严重程度 [[急症]]))}}
+	  query-properties:: [:page :传染性 :病因类型 :受累系统 :好发年龄段 :alias]
+	- 重症: {{query (and (page-property :type [[疾病]]) (page-property :严重程度 [[重症]]))}}
+	- 中症: {{query (and (page-property :type [[疾病]]) (page-property :严重程度 [[中症]]))}}
+	  query-properties:: [:page :传染性 :病因类型 :受累系统 :好发年龄段 :alias]
+	- ### 按病因类型
+	- 营养代谢性: {{query (and (page-property :type [[疾病]]) (page-property :病因类型 [[营养代谢性]]))}}
+	  query-properties:: [:page :严重程度 :传染性 :受累系统 :好发年龄段 :alias]
+	- 中毒性: {{query (and (page-property :type [[疾病]]) (page-property :病因类型 [[中毒性]]))}}
+	  query-properties:: [:page :严重程度 :传染性 :受累系统 :好发年龄段 :alias]
 - ## 🧠 行为习惯
-  - {{query (property type [[行为]]) }}
-  - _（尚待添加，欢迎贡献）_
+	- {{query (property type [[行为]]) }}
+	- _（尚待添加，欢迎贡献）_
 - ## 🦴 身体构造
-  - {{query (property type [[身体构造]]) }}
-  - _（尚待添加，欢迎贡献）_
+	- {{query (property type [[身体构造]]) }}
+	- _（尚待添加，欢迎贡献）_
 - ## 🔄 生理周期
-  - {{query (property type [[生理周期]]) }}
-  - _（尚待添加，欢迎贡献）_
+	- {{query (property type [[生理周期]]) }}
+	- _（尚待添加，欢迎贡献）_
