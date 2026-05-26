@@ -41,6 +41,8 @@
 	- 重症: {{query (and (page-property :type [[疾病]]) (page-property :严重程度 [[重症]]))}}
 	- 中症: {{query (and (page-property :type [[疾病]]) (page-property :严重程度 [[中症]]))}}
 	  query-properties:: [:page :传染性 :病因类型 :受累系统 :好发年龄段 :alias]
+	- 轻症: {{query (and (page-property :type [[疾病]]) (page-property :严重程度 [[轻症]]))}}
+	  query-properties:: [:page :传染性 :病因类型 :受累系统 :好发年龄段 :alias]
 	- ### 按病因类型
 	- 营养代谢性: {{query (and (page-property :type [[疾病]]) (page-property :病因类型 [[营养代谢性]]))}}
 	  query-properties:: [:page :严重程度 :传染性 :受累系统 :好发年龄段 :alias]
