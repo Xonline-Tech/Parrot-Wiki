@@ -3,6 +3,8 @@
 	- {{query (and (page-property :type [[饮食]]) (page-property :安全等级 [[安全]]))}}
 	  query-table:: true
 	  query-properties:: [:page :食物类型 :年龄阶段 :alias]
+	  query-sort-by:: 年龄阶段
+	  query-sort-desc:: true
 	- ### 需注意
 	- {{query (and (page-property :type [[饮食]]) (page-property :安全等级 [[需注意]]))}}
 	  query-properties:: [:page :食物类型 :年龄阶段 :alias]
@@ -48,8 +50,14 @@
 	- {{query (property type [[行为]]) }}
 	- _（尚待添加，欢迎贡献）_
 - ## 🦴 身体构造
-	- {{query (property type [[身体构造]]) }}
+	- {{query (page-property :type [[身体构造]])}}
+	  query-table:: true
+	  query-properties:: [:page :隶属系统 :英文 :alias]
+	  query-sort-by:: 隶属系统
+	  query-sort-desc:: false
 	- _（尚待添加，欢迎贡献）_
 - ## 🔄 生理周期
-	- {{query (property type [[生理周期]]) }}
+	- {{query (page-property :type [[生理周期]])}}
+	  query-table:: true
+	  query-properties:: [:block :page :周期类型 :持续时间 :触发因素 :alias]
 	- _（尚待添加，欢迎贡献）_
