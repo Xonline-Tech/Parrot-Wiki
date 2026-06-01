@@ -58,8 +58,12 @@
 	  query-sort-by:: 隶属系统
 	  query-sort-desc:: false
 	- _（尚待添加，欢迎贡献）_
+- ## 📝 文章
+	- {{query (page-property :type [[文章]])}}
+	  query-table:: true
+	  query-properties:: [:page :文章分类 :alias]
+	- _（尚待添加，欢迎贡献）_
 - ## 🔄 生理周期
 	- {{query (page-property :type [[生理周期]])}}
 	  query-table:: true
 	  query-properties:: [:block :page :周期类型 :持续时间 :触发因素 :alias]
-	- _（尚待添加，欢迎贡献）_
